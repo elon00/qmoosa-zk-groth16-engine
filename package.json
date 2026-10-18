@@ -1,0 +1,35 @@
+{
+  "name": "@qmoosa/zk-groth16-engine",
+  "version": "1.0.0",
+  "description": "QMOOSA Zero-Knowledge Cryptography — Groth16 BN254 Pairing Verification Engine",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test tests/engine.test.mjs",
+    "lint": "tsc --noEmit",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@qmoosa/zk-groth16-protocol": "file:../qmoosa-zk-groth16-protocol/qmoosa-zk-groth16-protocol-1.0.0.tgz",
+    "@noble/curves": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "keywords": [
+    "qmoosa",
+    "zk-snark",
+    "groth16",
+    "bn254",
+    "alt-bn128",
+    "pairing",
+    "zero-knowledge",
+    "engine",
+    "web4"
+  ],
+  "author": "elon00",
+  "license": "MIT"
+}
