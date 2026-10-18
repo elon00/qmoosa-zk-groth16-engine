@@ -12,7 +12,7 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@qmoosa/zk-groth16-protocol": "file:../qmoosa-zk-groth16-protocol/qmoosa-zk-groth16-protocol-1.0.0.tgz",
+    "@qmoosa/zk-groth16-protocol": "file:../qmoosa-zk-groth16-protocol",
     "@noble/curves": "^2.4.0"
   },
   "devDependencies": {
