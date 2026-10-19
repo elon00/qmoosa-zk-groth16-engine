@@ -5,12 +5,12 @@ import {
   BN254_SCALAR_MODULUS_R
 } from '../dist/index.js';
 
-test('Groth16 Engine: End-to-End BN254 Pairing Verification on Genuine Proof', () => {
+test('Groth16 Engine: Synthetic BN254 Pairing Relation Sanity Check', () => {
   const engine = new Groth16Engine();
   const { vk, proof, publicInputs } = engine.generateMockCircuit(2, [100n, 200n]);
 
   const isValid = engine.verifyProof(vk, proof, publicInputs);
-  assert.equal(isValid, true, 'Genuine Groth16 proof must verify successfully');
+  assert.equal(isValid, true, 'Synthetic pairing fixture must satisfy its algebraic relation');
 });
 
 test('Groth16 Engine: Multi-Input Circuit Verification (5 Public Inputs)', () => {

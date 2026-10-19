@@ -91,7 +91,10 @@ export class Groth16Engine {
     let L = toG1Projective(vk.ic[0]);
     for (let i = 0; i < publicInputs.length; i++) {
       const icPoint = toG1Projective(vk.ic[i + 1]);
-      L = L.add(icPoint.multiply(publicInputs[i]));
+      // Zero contributes the identity; noble's multiply requires a nonzero scalar.
+      if (publicInputs[i] !== 0n) {
+        L = L.add(icPoint.multiply(publicInputs[i]));
+      }
     }
 
     // Compute pairings in F_p12
