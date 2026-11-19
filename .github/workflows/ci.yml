@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout engine repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: qmoosa-zk-groth16-engine
 
       - name: Checkout protocol repository (Pinned Commit)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: elon00/qmoosa-zk-groth16-protocol
           ref: 9b7f29227196b57f2c3d9f52cb123f72c5fd6afc
